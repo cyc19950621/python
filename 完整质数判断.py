@@ -23,8 +23,7 @@ if is_float(n)==n:
               if (num% i) == 0:
                   print(n, "不是质数")
                   break
-              else:
+         else:
                   print(n, "是质数")
-                  break
     else:
         print("请输入大于1的数")
