@@ -1,0 +1,69 @@
+for txt in txts:
+    b=[x for x in open(txt,"r",'utf-8').readlines() if x.find('诊疗计划')>-1]
+    print(b)
+
+
+        f = open(txt,'txt')   
+    lines = f.readlines()      #读取全部内容 ，并以列表方式返回  
+    for line in lines:
+        if line.find ('诊疗计划') >-1:
+            zljhs.append(line)
+print(zljhs)
+
+
+    for cnm in cnms:
+        if cnm.find ('诊疗计划') >-1:
+            #line=line.decode('gbk')
+            zljhs.append(cnm)
+
+
+ for line in lines:
+        if line.find ('诊疗计划') >-1:
+            zljhs.append(line)
+print(zljhs)
+
+
+
+file=open('D:\DeepLearning ER\data.txt','w') 
+file.write(str(zljhs)); 
+file.close() 
+
+    a = re.sub(r'[0-9]',' ',line)
+    a = re.split(r'[ \t\n]+',a)
+
+
+
+    file_ = "1.txt"
+r_file = open(file_, "r")
+lines = r_file.readlines()
+r_file.close()
+for idx, line in enumerate(lines):
+  if line.split():
+    print(idx, line)
+r_file.close()
+
+#-*- coding: UTF-8 -*- 
+
+import os
+import EMRdef
+import re
+pattern = r',|;|\'|`|\[|\]|<|>|\?|"|\{|\}|!|@|#|\$|%|\^|&|=|，|。|；|‘|’|【|】|·|！|…'#清除标点
+f = open('D:\python\EMR\drugdic.txt','r',errors="ignore")
+drugdic = []
+for line in f.readlines():
+    a = re.sub(r'[A-Za-z0-9]|/d+' ,'',line)#删除字母和标点
+    a = a.replace(' ',' \n')
+    a = re.sub(r' ' ,'',a)#删除空格
+    drugdic.append(a)
+EMRdef.dic_save('D:\DeepLearning ER\drugdic.txt',drugdic)
+
+g = open('D:\DeepLearning ER\drugdic.txt','r',errors="ignore")
+delns = g.readlines()
+dicdeln=[]
+for idx, deln in enumerate(delns):
+      if deln.split():
+          deln = re.sub(r',|（）|画\n|一\n|二\n|三\n|四\n|五\n|六\n|七\n|八\n|九\n|十\n|十一\n|十二\n|十三\n|十四\n|十五\n|十六\n|十七\n|十八\n|十九\n|二十\n|-' ,'',deln)#删除
+          deln = re.sub(r' ' ,'',deln)#删除空格
+          dicdeln.append(deln)
+#print(dicdeln)
+EMRdef.dic_save('D:\DeepLearning ER\drugdicdeln.txt',dicdeln)
