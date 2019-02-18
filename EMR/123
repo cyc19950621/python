@@ -67,3 +67,13 @@ for idx, deln in enumerate(delns):
           dicdeln.append(deln)
 #print(dicdeln)
 EMRdef.dic_save('D:\DeepLearning ER\drugdicdeln.txt',dicdeln)
+b = open('D:\python\EMR\drugdicdeln.txt','r',errors="ignore")
+emrtxts = EMRdef.txttq(u'D:\DeepLearning ER\EHRCFC')#txt目录提取
+brl = b.readlines()
+adult=[]
+for emrtxt in emrtxts:
+    f = open(emrtxt,'r',errors="ignore")#中文加入errors
+    for al in f.readlines():
+        for bl in brl:
+            bl=re.sub('\n','',bl)
+            if al.find(bl) > -1:

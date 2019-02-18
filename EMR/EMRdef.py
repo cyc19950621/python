@@ -24,7 +24,8 @@ def text_save(filename, data):#filename为写入CSV文件的路径，data为要�
         s = s+'\n'   #去除单引号，逗号，每行末尾追加换行符
         file.write(s)
     file.close()
-#以下函数用于字典导出
+
+#以下函数用于列表导出
 def dic_save(filename, data):#filename为写入CSV文件的路径，data为要写入数据列表.
     file = open(filename,'a')
     for i in range(len(data)):
@@ -39,3 +40,11 @@ import re
 import jieba
 def dicclean(x):#cut words and delete punctuation
    x=re.sub(r'[A-Za-z0-9]|/d+','',x)#delet numbers and letters
+
+
+# 创建一个txt文件，文件名为mytxtfile,并向文件写入msg
+def text_create(path,form,name, msg):#路径 格式 名称 内容（str）
+    #desktop_path = "D:\DeepLearning ER\EHRC\ "  # 新创建的txt文件的存放路径
+    full_path = path +'\/' + name + form # 也可以创建一个.doc的word文档
+    file = open(full_path, 'w')
+    file.write(msg) 
