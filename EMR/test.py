@@ -3,7 +3,7 @@
 import os
 import EMRdef
 import re
-b = open('D:\python\EMR\ywml.txt','r',errors="ignore")
+b = open('D:\python\EMR\967ywml.txt','r',errors="ignore")
 emrtxts = EMRdef.txttq(u'D:\DeepLearning ER\EHR6')#txt目录提取
 pattern = r',|;|\*|`|\[|\]|<|>|\?|"|\{|\}|!|@|#|\$|%|\^|&|=|，|。|：|；|‘|’|【|】|（|）|·|！|、|…'#清除标点
 brla = b.readlines()

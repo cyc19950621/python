@@ -3,6 +3,7 @@ import os
 import EMRdef
 import string
 import re
+ '''本文件用于数据清洗，生成文件基于所用药物分划段落'''
  
 emrtxts = EMRdef.txttq(r'D:\DeepLearning ER\EHR3')#txt目录提取
 pattern = r',|;|\'|`|\[|\]|<|>|\?|"|\{|\}|!|@|#|\$|%|\^|&|=|，|。|：|；|‘|’|【|】|（|）|\( |\) |·|！|、|…'#清除标点

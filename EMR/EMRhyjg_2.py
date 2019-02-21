@@ -1,12 +1,12 @@
+#根据词典提取
 #-*- coding: UTF-8 -*- 
-#本文件用于提取给药方式
+#本文件用于根据指标参数提取所有指标
 import os
 import EMRdef
 import re
 
-b = open('D:\python\EMR\ywml.txt','r',errors="ignore")
-emrtxts = EMRdef.txttq(u'D:\DeepLearning ER\EHR2')#txt目录提取
-pattern = r',|;|\*|`|\[|\]|<|>|\?|"|\{|\}|!|@|#|\$|%|\^|&|=|，|。|：|；|‘|’|【|】|（|）|·|！|、|…'#清除标点
+b = open('D:\python\EMR\hyzb.txt','r',errors="ignore")
+emrtxts = EMRdef.txttq(u'D:\DeepLearning ER\EHRzlgc2')#txt目录提取
 brl = b.readlines()
 test_out = []
 for emrtxt in emrtxts:
@@ -23,13 +23,10 @@ for emrtxt in emrtxts:
                 adult = []
             else:
                 if al.find(bl) > -1:
-                    test_out.append(bl)
                     adult.append(al+'\n')#进行给药方式关键字判定
                 for i in adult :
                     if not i in adult_c:
                         adult_c.append(i)
                         adult_cstr = "".join(adult_c)#转成str
-                        EMRdef.text_create(r'D:\DeepLearning ER\EHR3','.txt',emrpath,adult_cstr)                    
-EMRdef.text_save(u'D:\python\EMR\967ywml.txt',test_out)
-
-
+                        EMRdef.text_create(r'D:\DeepLearning ER\EHRzlgc3','.txt',emrpath,adult_cstr)                    
+#EMRdef.text_save(u'D:\python\EMR\967ywml.txt',test_out)

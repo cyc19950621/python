@@ -9,8 +9,7 @@ import os, os.path,shutil
 import codecs 
 import EMRdef
 import re
-b = open('D:\python\EMR\ywml.txt','r',errors="ignore")
-brl = b.readlines()
+
 emrtxts = EMRdef.txttq(u'D:\DeepLearning ER\EHR')#txt目录提取
 zljhs = []
 for emrtxt in emrtxts:
@@ -22,14 +21,8 @@ for emrtxt in emrtxts:
     #txtp=txtp.decode('utf-8')
     for line in f.readlines():
         line = re.sub(' ','',line)#删除空格
-        if line.find (u'诊疗计划：',0,6) >-1:
-            for bl in brl:#加入用药判定
-                bl = re.sub('\n','',bl)
-                if bl == '':
-                    nothing=[]
-                else:
-                    if line.find(bl)>-1:
-                        line = re.sub(r'h|H', '小时', line)
-                        EMRdef.text_create(r'D:\DeepLearning ER\EHR1','.txt' ,emrtxt,line)#导出带有诊疗计划的文件和诊疗计划
+        if line.find (u'入院诊断：',0,6) >-1:
+                line = re.sub(r'h|H', '小时', line)
+                EMRdef.text_create(r'D:\DeepLearning ER\EHRryzd','.txt' ,emrtxt,line)#导出带有诊疗计划的文件和诊疗计划
             #zljhs.append(emrtxt+':'+line)
 #EMRdef.text_save('D:\python\EMR\zljh.txt',zljhs)
