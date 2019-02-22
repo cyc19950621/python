@@ -48,3 +48,14 @@ def text_create(path,form,name, msg):#路径 格式 名称 内容（str）
     full_path = path +'\/' + name + form # 也可以创建一个.doc的word文档
     file = open(full_path, 'w')
     file.write(msg) 
+
+
+#提取数字前内容
+def tq_bnum(string):
+   p= re.compile(r'(.*?)[0-9]',re.S)
+   return re.findall(p, string)
+
+#删除列表中的重复
+def delre(listA):
+    #return list(set(listA))
+    return sorted(set(listA), key = listA.index)

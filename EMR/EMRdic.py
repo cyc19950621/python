@@ -3,6 +3,7 @@
 import os
 import EMRdef
 import re
+pattern = r',|;|\'|`|\[|\]|<|>|\?|"|\{|\}|!|@|#|\$|\^|&|=|，|。|：|；|‘|’|【|】|·|！|、|…'#根据标点分词
 b = open('D:\python\EMR\967ywml.txt','r',errors="ignore")
 brl = b.readlines()
 adult = []
@@ -11,8 +12,6 @@ for bl in brl:
     bl = re.sub('\n','',bl)
     bl = re.sub('','',bl)
     adult.append(bl)
-def deleteDuplicatedElementFromList3(listA):
-    #return list(set(listA))
-    return sorted(set(listA), key = listA.index)
-adult_c = deleteDuplicatedElementFromList3(adult)
+
+adult_c = EMRdef.delre(adult)
 EMRdef.text_save(u'D:\python\EMR\967yw.txt',adult_c)
