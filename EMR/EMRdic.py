@@ -12,6 +12,5 @@ for bl in brl:
     bl = re.sub('\n','',bl)
     bl = re.sub('','',bl)
     adult.append(bl)
-
 adult_c = EMRdef.delre(adult)
 EMRdef.text_save(u'D:\python\EMR\967yw.txt',adult_c)

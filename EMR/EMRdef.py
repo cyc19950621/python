@@ -58,4 +58,17 @@ def tq_bnum(string):
 #删除列表中的重复
 def delre(listA):
     #return list(set(listA))
-    return sorted(set(listA), key = listA.index)
+   return sorted(set(listA), key = listA.index)
+
+#用于从右向左的替换
+#
+#self --  源字符串。
+#old  --  将被替换的子字符串。
+#new  --  新字符串，用于替换old子字符串。
+#max  --  可选字符串, 替换不超过 max 次''''
+
+def rre(self, old, new, *max):
+    count = len(self)
+    if max and str(max[0]).isdigit():
+        count = max[0]
+    return new.join(self.rsplit(old, count))
