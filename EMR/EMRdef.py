@@ -71,4 +71,4 @@ def rre(self, old, new, *max):
     count = len(self)
     if max and str(max[0]).isdigit():
         count = max[0]
-    return new.join(self.rsplit(old, count))
+    return new.join(self.split(old, count))

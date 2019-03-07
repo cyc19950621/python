@@ -6,7 +6,7 @@ import EMRdef
 import re
 #根据句号分词
 
-emrtxt2s = EMRdef.txttq(u'D:\DeepLearning ER\EHRzlgc2')#txt目录提取
+emrtxt2s = EMRdef.txttq(u'D:\DeepLearning ER\EHRzlgc')#txt目录提取
 pattern2 = r'、|；|：|、|:|，'#根据标点分词
 for emrtxt2 in emrtxt2s:
     f2 = open(emrtxt2,'r',errors="ignore")#中文加入errors
