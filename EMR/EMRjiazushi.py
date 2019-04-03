@@ -17,7 +17,7 @@ for emrtxt in emrtxts:
     f = open(emrtxt,'r',errors="ignore")#中文加入errors
     emrtxt = os.path.basename(emrtxt)
     emrtxt_str = re.findall(r'(^.+?)\_',emrtxt)#提取ID
-    emrtxt = "".join(emrtxt_str)#转成str
+    emrtxt = "".join(emrtxt_str)#转成str  
     #txtp=txtp.decode('utf-8')
     for line in f.readlines():
         line = re.sub(' ','',line)#删除空格
